@@ -116,7 +116,6 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(260, 20);
             this.tbName.TabIndex = 1;
-            this.tbName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -127,7 +126,6 @@
             this.label1.Size = new System.Drawing.Size(134, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // fLogin
             // 

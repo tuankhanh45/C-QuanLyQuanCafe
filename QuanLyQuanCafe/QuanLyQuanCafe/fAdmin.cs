@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyQuanCafe.DAO;
 
 namespace QuanLyQuanCafe
 {
@@ -15,11 +16,20 @@ namespace QuanLyQuanCafe
         public fAdmin()
         {
             InitializeComponent();
+            LoadAccountList();
+            LoadFoodList();
         }
-
-        private void tpAccount_Click(object sender, EventArgs e)
+        void LoadFoodList()
         {
+            string query = "select * from food";
 
+            dtgvFood.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
+        void LoadAccountList()
+        {
+            string query = "EXEC dbo.USP_GetAccountByUserName @userName";
+
+            dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { "staff" });
         }
     }
 }
