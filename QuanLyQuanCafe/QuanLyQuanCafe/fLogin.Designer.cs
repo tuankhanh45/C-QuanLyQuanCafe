@@ -89,6 +89,7 @@
             this.tbPassWord.Name = "tbPassWord";
             this.tbPassWord.Size = new System.Drawing.Size(260, 20);
             this.tbPassWord.TabIndex = 2;
+            this.tbPassWord.Text = "1";
             this.tbPassWord.UseSystemPasswordChar = true;
             // 
             // label2
@@ -116,6 +117,7 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(260, 20);
             this.tbName.TabIndex = 1;
+            this.tbName.Text = "k9";
             // 
             // label1
             // 
@@ -137,7 +139,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Đăng nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyQuanCafe.DAO;
+using QuanLyQuanCafe.DTO;
 
 namespace QuanLyQuanCafe
 {
@@ -15,8 +17,33 @@ namespace QuanLyQuanCafe
         public fTableManager()
         {
             InitializeComponent();
+            LoadTable();
         }
+        #region Method
+        void LoadTable()
+        {
+            List<Table> tableList = TableDAO.Instance.LoadTableList();
 
+            foreach (Table item in tableList)
+            {
+                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
+                btn.Text = item.Name + Environment.NewLine + item.Status;
+
+                switch (item.Status)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.Aqua;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+
+                flpTable.Controls.Add(btn);
+            }
+        }
+        #endregion
+        #region Events
         private void fTableManager_Load(object sender, EventArgs e)
         {
 
@@ -38,5 +65,6 @@ namespace QuanLyQuanCafe
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+        #endregion
     }
 }
