@@ -23,6 +23,7 @@ namespace QuanLyQuanCafe.DAO
         public List<BillInfo> GetListBillInfo(int id)
         {
             List<BillInfo> listBillInfo = new List<BillInfo>();
+
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.BillInfo WHERE idBill = " + id);
 
             foreach (DataRow item in data.Rows)
@@ -30,7 +31,13 @@ namespace QuanLyQuanCafe.DAO
                 BillInfo info = new BillInfo(item);
                 listBillInfo.Add(info);
             }
+
             return listBillInfo;
+        }
+
+        public void InsertBillInfo(int idBill, int idFood, int count)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfo @idBill , @idFood , @count", new object[] { idBill, idFood, count });
         }
     }
 }

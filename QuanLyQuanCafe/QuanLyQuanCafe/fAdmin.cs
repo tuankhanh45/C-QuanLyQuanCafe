@@ -1,13 +1,14 @@
-﻿using System;
+﻿using QuanLyQuanCafe.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyQuanCafe.DAO;
 
 namespace QuanLyQuanCafe
 {
@@ -16,20 +17,29 @@ namespace QuanLyQuanCafe
         public fAdmin()
         {
             InitializeComponent();
-            LoadAccountList();
-            LoadFoodList();
+            LoadDateTimePickerBill();
+            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
         }
-        void LoadFoodList()
-        {
-            string query = "select * from food";
 
-            dtgvFood.DataSource = DataProvider.Instance.ExecuteQuery(query);
-        }
-        void LoadAccountList()
+        #region methods
+        void LoadDateTimePickerBill()
         {
-            string query = "EXEC dbo.USP_GetAccountByUserName @userName";
-
-            dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { "staff" });
+            DateTime today = DateTime.Now;
+            dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
+            dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
         }
+        void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
+        {
+            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
+        }
+        #endregion
+
+        #region events
+        private void btnViewBill_Click(object sender, EventArgs e)
+        {
+            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+        #endregion
+
     }
 }
