@@ -32,10 +32,10 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tbPassWord = new System.Windows.Forms.TextBox();
+            this.txbPassWord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbName = new System.Windows.Forms.TextBox();
+            this.txbUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,21 +76,21 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tbPassWord);
+            this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(12, 84);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(402, 32);
             this.panel3.TabIndex = 1;
             // 
-            // tbPassWord
+            // txbPassWord
             // 
-            this.tbPassWord.Location = new System.Drawing.Point(139, 3);
-            this.tbPassWord.Name = "tbPassWord";
-            this.tbPassWord.Size = new System.Drawing.Size(260, 20);
-            this.tbPassWord.TabIndex = 2;
-            this.tbPassWord.Text = "1";
-            this.tbPassWord.UseSystemPasswordChar = true;
+            this.txbPassWord.Location = new System.Drawing.Point(139, 3);
+            this.txbPassWord.Name = "txbPassWord";
+            this.txbPassWord.Size = new System.Drawing.Size(260, 20);
+            this.txbPassWord.TabIndex = 2;
+            this.txbPassWord.Text = "1";
+            this.txbPassWord.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -104,20 +104,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tbName);
+            this.panel2.Controls.Add(this.txbUserName);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(12, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(402, 32);
             this.panel2.TabIndex = 0;
             // 
-            // tbName
+            // txbUserName
             // 
-            this.tbName.Location = new System.Drawing.Point(139, 3);
-            this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(260, 20);
-            this.tbName.TabIndex = 1;
-            this.tbName.Text = "k9";
+            this.txbUserName.Location = new System.Drawing.Point(139, 3);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.Size = new System.Drawing.Size(260, 20);
+            this.txbUserName.TabIndex = 1;
+            this.txbUserName.Text = "k9";
             // 
             // label1
             // 
@@ -154,10 +154,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox tbPassWord;
+        private System.Windows.Forms.TextBox txbPassWord;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnLogin;

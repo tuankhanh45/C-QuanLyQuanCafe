@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbName = new System.Windows.Forms.TextBox();
+            this.txbUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbDisplayName = new System.Windows.Forms.TextBox();
+            this.txbDisplayName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.tbPassWord = new System.Windows.Forms.TextBox();
+            this.txbPassWord = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbNewPass = new System.Windows.Forms.TextBox();
+            this.txbNewPass = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.tbReEnterPass = new System.Windows.Forms.TextBox();
+            this.txbReEnterPass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -54,20 +54,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tbName);
+            this.panel2.Controls.Add(this.txbUserName);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(28, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(402, 32);
             this.panel2.TabIndex = 1;
             // 
-            // tbName
+            // txbUserName
             // 
-            this.tbName.Location = new System.Drawing.Point(139, 3);
-            this.tbName.Name = "tbName";
-            this.tbName.ReadOnly = true;
-            this.tbName.Size = new System.Drawing.Size(260, 20);
-            this.tbName.TabIndex = 1;
+            this.txbUserName.Location = new System.Drawing.Point(139, 3);
+            this.txbUserName.Name = "txbUserName";
+            this.txbUserName.ReadOnly = true;
+            this.txbUserName.Size = new System.Drawing.Size(260, 20);
+            this.txbUserName.TabIndex = 1;
             // 
             // label1
             // 
@@ -81,19 +81,19 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tbDisplayName);
+            this.panel1.Controls.Add(this.txbDisplayName);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(28, 61);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(402, 32);
             this.panel1.TabIndex = 2;
             // 
-            // tbDisplayName
+            // txbDisplayName
             // 
-            this.tbDisplayName.Location = new System.Drawing.Point(139, 3);
-            this.tbDisplayName.Name = "tbDisplayName";
-            this.tbDisplayName.Size = new System.Drawing.Size(260, 20);
-            this.tbDisplayName.TabIndex = 1;
+            this.txbDisplayName.Location = new System.Drawing.Point(139, 3);
+            this.txbDisplayName.Name = "txbDisplayName";
+            this.txbDisplayName.Size = new System.Drawing.Size(260, 20);
+            this.txbDisplayName.TabIndex = 1;
             // 
             // label2
             // 
@@ -107,19 +107,19 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tbPassWord);
+            this.panel3.Controls.Add(this.txbPassWord);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(31, 114);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(402, 32);
             this.panel3.TabIndex = 3;
             // 
-            // tbPassWord
+            // txbPassWord
             // 
-            this.tbPassWord.Location = new System.Drawing.Point(139, 3);
-            this.tbPassWord.Name = "tbPassWord";
-            this.tbPassWord.Size = new System.Drawing.Size(260, 20);
-            this.tbPassWord.TabIndex = 1;
+            this.txbPassWord.Location = new System.Drawing.Point(139, 3);
+            this.txbPassWord.Name = "txbPassWord";
+            this.txbPassWord.Size = new System.Drawing.Size(260, 20);
+            this.txbPassWord.TabIndex = 1;
             // 
             // label3
             // 
@@ -133,19 +133,19 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.tbNewPass);
+            this.panel4.Controls.Add(this.txbNewPass);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(31, 164);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(402, 32);
             this.panel4.TabIndex = 4;
             // 
-            // tbNewPass
+            // txbNewPass
             // 
-            this.tbNewPass.Location = new System.Drawing.Point(139, 3);
-            this.tbNewPass.Name = "tbNewPass";
-            this.tbNewPass.Size = new System.Drawing.Size(260, 20);
-            this.tbNewPass.TabIndex = 1;
+            this.txbNewPass.Location = new System.Drawing.Point(139, 3);
+            this.txbNewPass.Name = "txbNewPass";
+            this.txbNewPass.Size = new System.Drawing.Size(260, 20);
+            this.txbNewPass.TabIndex = 1;
             // 
             // label4
             // 
@@ -159,19 +159,19 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.tbReEnterPass);
+            this.panel5.Controls.Add(this.txbReEnterPass);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(31, 217);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 32);
             this.panel5.TabIndex = 5;
             // 
-            // tbReEnterPass
+            // txbReEnterPass
             // 
-            this.tbReEnterPass.Location = new System.Drawing.Point(139, 3);
-            this.tbReEnterPass.Name = "tbReEnterPass";
-            this.tbReEnterPass.Size = new System.Drawing.Size(260, 20);
-            this.tbReEnterPass.TabIndex = 1;
+            this.txbReEnterPass.Location = new System.Drawing.Point(139, 3);
+            this.txbReEnterPass.Name = "txbReEnterPass";
+            this.txbReEnterPass.Size = new System.Drawing.Size(260, 20);
+            this.txbReEnterPass.TabIndex = 1;
             // 
             // label5
             // 
@@ -191,6 +191,7 @@
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
@@ -201,7 +202,7 @@
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.btnExti_Click);
             // 
             // fAccountProfile
             // 
@@ -220,7 +221,6 @@
             this.Name = "fAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin cá nhân";
-            this.Load += new System.EventHandler(this.fAccountProfile_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -238,19 +238,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tbDisplayName;
+        private System.Windows.Forms.TextBox txbDisplayName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox tbPassWord;
+        private System.Windows.Forms.TextBox txbPassWord;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox tbNewPass;
+        private System.Windows.Forms.TextBox txbNewPass;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox tbReEnterPass;
+        private System.Windows.Forms.TextBox txbReEnterPass;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;
