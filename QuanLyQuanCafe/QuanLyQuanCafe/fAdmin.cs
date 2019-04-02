@@ -19,12 +19,18 @@ namespace QuanLyQuanCafe
         public fAdmin()
         {
             InitializeComponent();
-            Loading();
+            Load();
         }
 
         #region methods
 
-       public void Loading()
+        List<Food> SearchFoodByName(string name)
+        {
+            List<Food> listFood = FoodDAO.Instance.SearchFoodByName(name);
+
+            return listFood;
+        }
+        void Load()
         {
             dtgvFood.DataSource = foodList;
 
@@ -64,30 +70,38 @@ namespace QuanLyQuanCafe
         #endregion
 
         #region events
+        private void btnSearchFood_Click(object sender, EventArgs e)
+        {
+            foodList.DataSource = SearchFoodByName(txbSearchFoodName.Text);
+        }
         private void txbFoodID_TextChanged(object sender, EventArgs e)
         {
-            if (dtgvFood.SelectedCells.Count > 0)
+            try
             {
-                int id = (int)dtgvFood.SelectedCells[0].OwningRow.Cells["CategoryID"].Value;
-
-                Category cateogory = CategoryDAO.Instance.GetCategoryByID(id);
-
-                cbFoodCategory.SelectedItem = cateogory;
-
-                int index = -1;
-                int i = 0;
-                foreach (Category item in cbFoodCategory.Items)
+                if (dtgvFood.SelectedCells.Count > 0)
                 {
-                    if (item.ID == cateogory.ID)
-                    {
-                        index = i;
-                        break;
-                    }
-                    i++;
-                }
+                    int id = (int)dtgvFood.SelectedCells[0].OwningRow.Cells["CategoryID"].Value;
 
-                cbFoodCategory.SelectedIndex = index;
+                    Category cateogory = CategoryDAO.Instance.GetCategoryByID(id);
+
+                    cbFoodCategory.SelectedItem = cateogory;
+
+                    int index = -1;
+                    int i = 0;
+                    foreach (Category item in cbFoodCategory.Items)
+                    {
+                        if (item.ID == cateogory.ID)
+                        {
+                            index = i;
+                            break;
+                        }
+                        i++;
+                    }
+
+                    cbFoodCategory.SelectedIndex = index;
+                }
             }
+            catch { }
         }
 
         private void btnAddFood_Click(object sender, EventArgs e)
@@ -177,5 +191,7 @@ namespace QuanLyQuanCafe
         }
 
         #endregion
+
+
     }
 }

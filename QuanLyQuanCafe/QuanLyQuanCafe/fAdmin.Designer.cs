@@ -56,7 +56,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvFood = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txbSearchFood = new System.Windows.Forms.TextBox();
+            this.txbSearchFoodName = new System.Windows.Forms.TextBox();
             this.btnSearchFood = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnShowFood = new System.Windows.Forms.Button();
@@ -426,19 +426,19 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txbSearchFood);
+            this.panel4.Controls.Add(this.txbSearchFoodName);
             this.panel4.Controls.Add(this.btnSearchFood);
             this.panel4.Location = new System.Drawing.Point(377, 6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(255, 39);
             this.panel4.TabIndex = 1;
             // 
-            // txbSearchFood
+            // txbSearchFoodName
             // 
-            this.txbSearchFood.Location = new System.Drawing.Point(3, 10);
-            this.txbSearchFood.Name = "txbSearchFood";
-            this.txbSearchFood.Size = new System.Drawing.Size(171, 20);
-            this.txbSearchFood.TabIndex = 4;
+            this.txbSearchFoodName.Location = new System.Drawing.Point(3, 10);
+            this.txbSearchFoodName.Name = "txbSearchFoodName";
+            this.txbSearchFoodName.Size = new System.Drawing.Size(171, 20);
+            this.txbSearchFoodName.TabIndex = 4;
             // 
             // btnSearchFood
             // 
@@ -448,6 +448,7 @@
             this.btnSearchFood.TabIndex = 3;
             this.btnSearchFood.Text = "Tìm ";
             this.btnSearchFood.UseVisualStyleBackColor = true;
+            this.btnSearchFood.Click += new System.EventHandler(this.btnSearchFood_Click);
             // 
             // panel3
             // 
@@ -1116,7 +1117,7 @@
         private System.Windows.Forms.TextBox txbFoodName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txbSearchFood;
+        private System.Windows.Forms.TextBox txbSearchFoodName;
         private System.Windows.Forms.Button btnSearchFood;
         private System.Windows.Forms.NumericUpDown nmFoodPrice;
         private System.Windows.Forms.ComboBox cbFoodCategory;
