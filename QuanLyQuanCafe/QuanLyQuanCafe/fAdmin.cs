@@ -47,6 +47,7 @@ namespace QuanLyQuanCafe
             LoadCategoryIntoCombobox(cbFoodCategory);
             AddFoodBinding();
             AddAccountBinding();
+            txbLastPage.Text =  "/  " + takeLastPage().ToString()  ;
         }
 
         void AddAccountBinding()
@@ -90,20 +91,13 @@ namespace QuanLyQuanCafe
 
         void AddAccount(string userName, string displayName, int type)
         {
-            if (loginAccount.UserName.Equals(userName))
+            if (AccountDAO.Instance.InsertAccount(userName, displayName, type))
             {
-                MessageBox.Show("Vui lòng đừng thêm chính bạn chứ");
-                return;
+                MessageBox.Show("Thêm tài khoản thành công");
             }
-            else {
-                if (AccountDAO.Instance.InsertAccount(userName, displayName, type))
-                {
-                    MessageBox.Show("Thêm tài khoản thành công");
-                }
-                else
-                {
-                    MessageBox.Show("Thêm tài khoản thất bại");
-                }
+            else
+            {
+                MessageBox.Show("Thêm tài khoản thất bại");
             }
 
             LoadAccount();
@@ -152,6 +146,14 @@ namespace QuanLyQuanCafe
             {
                 MessageBox.Show("Đặt lại mật khẩu thất bại");
             }
+        }
+         public int takeLastPage()
+        {   int lastPage=0;
+        int sumRecord = BillDAO.Instance.GetNumBillListByDate(dtpkFromDate.Value, dtpkToDate.Value);
+             lastPage = sumRecord / 10;
+            if (sumRecord % 10 != 0)
+                lastPage++;
+            return lastPage;
         }
         #endregion
 
@@ -318,6 +320,45 @@ namespace QuanLyQuanCafe
 
         #endregion
 
+        private void btnFristBillPage_Click(object sender, EventArgs e)
+        {   if (txbPageBill.Text == "1")
+             dtgvBill.DataSource = BillDAO.Instance.GetBillListByDateAndPage(dtpkFromDate.Value, dtpkToDate.Value, Convert.ToInt32(txbPageBill.Text));
+            else txbPageBill.Text = "1";
+        }
 
+        private void btnLastBillPage_Click(object sender, EventArgs e)
+        {
+            txbPageBill.Text = takeLastPage().ToString();
+        }
+
+        private void txbPageBill_TextChanged(object sender, EventArgs e)
+        {
+            int result;
+
+            if (int.TryParse(txbPageBill.Text.ToString(), out result))
+            {
+                dtgvBill.DataSource = BillDAO.Instance.GetBillListByDateAndPage(dtpkFromDate.Value, dtpkToDate.Value, Convert.ToInt32(txbPageBill.Text));
+            }
+        }
+        private void btnPrevioursBillPage_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txbPageBill.Text);
+
+            if (page > 1)
+                page--;
+
+            txbPageBill.Text = page.ToString();
+        }
+
+        private void btnNextBillPage_Click(object sender, EventArgs e)
+        {
+            int page = Convert.ToInt32(txbPageBill.Text);
+            int sumRecord = BillDAO.Instance.GetNumBillListByDate(dtpkFromDate.Value, dtpkToDate.Value);
+
+            if (page < sumRecord)
+                page++;
+
+            txbPageBill.Text = page.ToString();
+        }
     }
 }

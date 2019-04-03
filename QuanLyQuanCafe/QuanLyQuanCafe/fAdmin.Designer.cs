@@ -100,7 +100,9 @@
             this.btnAddTable = new System.Windows.Forms.Button();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.nmAccountType = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
@@ -116,8 +118,12 @@
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
-            this.nmAccountType = new System.Windows.Forms.NumericUpDown();
-            this.btnResetPassword = new System.Windows.Forms.Button();
+            this.btnFisrtBillPage = new System.Windows.Forms.Button();
+            this.btnLastBillPage = new System.Windows.Forms.Button();
+            this.btnPreviosBillPage = new System.Windows.Forms.Button();
+            this.btnNextBillPage = new System.Windows.Forms.Button();
+            this.txbPageBill = new System.Windows.Forms.TextBox();
+            this.txbLastPage = new System.Windows.Forms.TextBox();
             this.tcBill.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -152,12 +158,12 @@
             this.tpAccount.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmAccountType)).BeginInit();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.panel27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmAccountType)).BeginInit();
             this.SuspendLayout();
             // 
             // tcBill
@@ -187,6 +193,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txbLastPage);
+            this.panel2.Controls.Add(this.txbPageBill);
+            this.panel2.Controls.Add(this.btnNextBillPage);
+            this.panel2.Controls.Add(this.btnPreviosBillPage);
+            this.panel2.Controls.Add(this.btnLastBillPage);
+            this.panel2.Controls.Add(this.btnFisrtBillPage);
             this.panel2.Controls.Add(this.dtgvBill);
             this.panel2.Location = new System.Drawing.Point(6, 42);
             this.panel2.Name = "panel2";
@@ -199,7 +211,7 @@
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Location = new System.Drawing.Point(3, 3);
             this.dtgvBill.Name = "dtgvBill";
-            this.dtgvBill.Size = new System.Drawing.Size(620, 289);
+            this.dtgvBill.Size = new System.Drawing.Size(620, 250);
             this.dtgvBill.TabIndex = 0;
             // 
             // panel1
@@ -857,6 +869,16 @@
             this.panel22.Size = new System.Drawing.Size(255, 286);
             this.panel22.TabIndex = 10;
             // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.Location = new System.Drawing.Point(144, 186);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(105, 37);
+            this.btnResetPassword.TabIndex = 4;
+            this.btnResetPassword.Text = "Đặt lại mật khẩu";
+            this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
+            // 
             // panel23
             // 
             this.panel23.Controls.Add(this.nmAccountType);
@@ -865,6 +887,13 @@
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(249, 35);
             this.panel23.TabIndex = 3;
+            // 
+            // nmAccountType
+            // 
+            this.nmAccountType.Location = new System.Drawing.Point(141, 7);
+            this.nmAccountType.Name = "nmAccountType";
+            this.nmAccountType.Size = new System.Drawing.Size(32, 20);
+            this.nmAccountType.TabIndex = 1;
             // 
             // label15
             // 
@@ -1007,22 +1036,64 @@
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
-            // nmAccountType
+            // btnFisrtBillPage
             // 
-            this.nmAccountType.Location = new System.Drawing.Point(112, 7);
-            this.nmAccountType.Name = "nmAccountType";
-            this.nmAccountType.Size = new System.Drawing.Size(32, 20);
-            this.nmAccountType.TabIndex = 1;
+            this.btnFisrtBillPage.Location = new System.Drawing.Point(3, 269);
+            this.btnFisrtBillPage.Name = "btnFisrtBillPage";
+            this.btnFisrtBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnFisrtBillPage.TabIndex = 1;
+            this.btnFisrtBillPage.Text = "First";
+            this.btnFisrtBillPage.UseVisualStyleBackColor = true;
+            this.btnFisrtBillPage.Click += new System.EventHandler(this.btnFristBillPage_Click);
             // 
-            // btnResetPassword
+            // btnLastBillPage
             // 
-            this.btnResetPassword.Location = new System.Drawing.Point(144, 186);
-            this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(105, 37);
-            this.btnResetPassword.TabIndex = 4;
-            this.btnResetPassword.Text = "Đặt lại mật khẩu";
-            this.btnResetPassword.UseVisualStyleBackColor = true;
-            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
+            this.btnLastBillPage.Location = new System.Drawing.Point(548, 269);
+            this.btnLastBillPage.Name = "btnLastBillPage";
+            this.btnLastBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnLastBillPage.TabIndex = 2;
+            this.btnLastBillPage.Text = "Last";
+            this.btnLastBillPage.UseVisualStyleBackColor = true;
+            this.btnLastBillPage.Click += new System.EventHandler(this.btnLastBillPage_Click);
+            // 
+            // btnPreviosBillPage
+            // 
+            this.btnPreviosBillPage.Location = new System.Drawing.Point(84, 269);
+            this.btnPreviosBillPage.Name = "btnPreviosBillPage";
+            this.btnPreviosBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnPreviosBillPage.TabIndex = 3;
+            this.btnPreviosBillPage.Text = "Previous";
+            this.btnPreviosBillPage.UseVisualStyleBackColor = true;
+            this.btnPreviosBillPage.Click += new System.EventHandler(this.btnPrevioursBillPage_Click);
+            // 
+            // btnNextBillPage
+            // 
+            this.btnNextBillPage.Location = new System.Drawing.Point(467, 269);
+            this.btnNextBillPage.Name = "btnNextBillPage";
+            this.btnNextBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnNextBillPage.TabIndex = 4;
+            this.btnNextBillPage.Text = "Next";
+            this.btnNextBillPage.UseVisualStyleBackColor = true;
+            this.btnNextBillPage.Click += new System.EventHandler(this.btnNextBillPage_Click);
+            // 
+            // txbPageBill
+            // 
+            this.txbPageBill.Location = new System.Drawing.Point(245, 271);
+            this.txbPageBill.Name = "txbPageBill";
+            this.txbPageBill.Size = new System.Drawing.Size(46, 20);
+            this.txbPageBill.TabIndex = 5;
+            this.txbPageBill.Text = "1";
+            this.txbPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbPageBill.TextChanged += new System.EventHandler(this.txbPageBill_TextChanged);
+            // 
+            // txbLastPage
+            // 
+            this.txbLastPage.Location = new System.Drawing.Point(304, 271);
+            this.txbLastPage.Name = "txbLastPage";
+            this.txbLastPage.Size = new System.Drawing.Size(46, 20);
+            this.txbLastPage.TabIndex = 6;
+            this.txbLastPage.Text = "1";
+            this.txbLastPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fAdmin
             // 
@@ -1038,6 +1109,7 @@
             this.tcBill.ResumeLayout(false);
             this.tpBill.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1085,6 +1157,7 @@
             this.panel22.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmAccountType)).EndInit();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -1092,7 +1165,6 @@
             this.panel26.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.panel27.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmAccountType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1189,5 +1261,11 @@
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.NumericUpDown nmAccountType;
         private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.TextBox txbPageBill;
+        private System.Windows.Forms.Button btnNextBillPage;
+        private System.Windows.Forms.Button btnPreviosBillPage;
+        private System.Windows.Forms.Button btnLastBillPage;
+        private System.Windows.Forms.Button btnFisrtBillPage;
+        private System.Windows.Forms.TextBox txbLastPage;
     }
 }
