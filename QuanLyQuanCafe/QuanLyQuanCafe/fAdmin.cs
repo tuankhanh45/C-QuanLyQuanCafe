@@ -24,7 +24,7 @@ namespace QuanLyQuanCafe
         public fAdmin()
         {
             InitializeComponent();
-            Load();
+            Loading();
         }
 
         #region methods
@@ -35,7 +35,7 @@ namespace QuanLyQuanCafe
 
             return listFood;
         }
-        void Load()
+        void Loading()
         {
             dtgvFood.DataSource = foodList;
             dtgvAccount.DataSource = accountList;
@@ -359,6 +359,15 @@ namespace QuanLyQuanCafe
                 page++;
 
             txbPageBill.Text = page.ToString();
+        }
+
+        private void fAdmin_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet1.USP_GetListBillByDateForReport' table. You can move, or remove it, as needed.
+            this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet1.USP_GetListBillByDateForReport,dtpkFromDate.Value, dtpkToDate.Value);
+            this.BillTableAdapter.Fill(this.QuanLyQuanCafeDataSet.Bill);
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

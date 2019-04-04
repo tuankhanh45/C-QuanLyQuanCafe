@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.BillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyQuanCafeDataSet = new QuanLyQuanCafe.QuanLyQuanCafeDataSet();
             this.tcBill = new System.Windows.Forms.TabControl();
             this.tpBill = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txbLastPage = new System.Windows.Forms.TextBox();
+            this.txbPageBill = new System.Windows.Forms.TextBox();
+            this.btnNextBillPage = new System.Windows.Forms.Button();
+            this.btnPreviosBillPage = new System.Windows.Forms.Button();
+            this.btnLastBillPage = new System.Windows.Forms.Button();
+            this.btnFisrtBillPage = new System.Windows.Forms.Button();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -118,12 +128,14 @@
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
-            this.btnFisrtBillPage = new System.Windows.Forms.Button();
-            this.btnLastBillPage = new System.Windows.Forms.Button();
-            this.btnPreviosBillPage = new System.Windows.Forms.Button();
-            this.btnNextBillPage = new System.Windows.Forms.Button();
-            this.txbPageBill = new System.Windows.Forms.TextBox();
-            this.txbLastPage = new System.Windows.Forms.TextBox();
+            this.Report = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.BillTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSetTableAdapters.BillTableAdapter();
+            this.QuanLyQuanCafeDataSet1 = new QuanLyQuanCafe.QuanLyQuanCafeDataSet1();
+            this.USP_GetListBillByDateForReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.USP_GetListBillByDateForReportTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSet1TableAdapters.USP_GetListBillByDateForReportTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.BillBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).BeginInit();
             this.tcBill.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -164,7 +176,20 @@
             this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.panel27.SuspendLayout();
+            this.Report.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // BillBindingSource
+            // 
+            this.BillBindingSource.DataMember = "Bill";
+            this.BillBindingSource.DataSource = this.QuanLyQuanCafeDataSet;
+            // 
+            // QuanLyQuanCafeDataSet
+            // 
+            this.QuanLyQuanCafeDataSet.DataSetName = "QuanLyQuanCafeDataSet";
+            this.QuanLyQuanCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tcBill
             // 
@@ -173,6 +198,7 @@
             this.tcBill.Controls.Add(this.tpFoodCategory);
             this.tcBill.Controls.Add(this.tbTable);
             this.tcBill.Controls.Add(this.tpAccount);
+            this.tcBill.Controls.Add(this.Report);
             this.tcBill.Location = new System.Drawing.Point(12, 12);
             this.tcBill.Name = "tcBill";
             this.tcBill.SelectedIndex = 0;
@@ -204,6 +230,65 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(626, 295);
             this.panel2.TabIndex = 1;
+            // 
+            // txbLastPage
+            // 
+            this.txbLastPage.Location = new System.Drawing.Point(304, 271);
+            this.txbLastPage.Name = "txbLastPage";
+            this.txbLastPage.Size = new System.Drawing.Size(46, 20);
+            this.txbLastPage.TabIndex = 6;
+            this.txbLastPage.Text = "1";
+            this.txbLastPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txbPageBill
+            // 
+            this.txbPageBill.Location = new System.Drawing.Point(245, 271);
+            this.txbPageBill.Name = "txbPageBill";
+            this.txbPageBill.Size = new System.Drawing.Size(46, 20);
+            this.txbPageBill.TabIndex = 5;
+            this.txbPageBill.Text = "1";
+            this.txbPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbPageBill.TextChanged += new System.EventHandler(this.txbPageBill_TextChanged);
+            // 
+            // btnNextBillPage
+            // 
+            this.btnNextBillPage.Location = new System.Drawing.Point(467, 269);
+            this.btnNextBillPage.Name = "btnNextBillPage";
+            this.btnNextBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnNextBillPage.TabIndex = 4;
+            this.btnNextBillPage.Text = "Next";
+            this.btnNextBillPage.UseVisualStyleBackColor = true;
+            this.btnNextBillPage.Click += new System.EventHandler(this.btnNextBillPage_Click);
+            // 
+            // btnPreviosBillPage
+            // 
+            this.btnPreviosBillPage.Location = new System.Drawing.Point(84, 269);
+            this.btnPreviosBillPage.Name = "btnPreviosBillPage";
+            this.btnPreviosBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnPreviosBillPage.TabIndex = 3;
+            this.btnPreviosBillPage.Text = "Previous";
+            this.btnPreviosBillPage.UseVisualStyleBackColor = true;
+            this.btnPreviosBillPage.Click += new System.EventHandler(this.btnPrevioursBillPage_Click);
+            // 
+            // btnLastBillPage
+            // 
+            this.btnLastBillPage.Location = new System.Drawing.Point(548, 269);
+            this.btnLastBillPage.Name = "btnLastBillPage";
+            this.btnLastBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnLastBillPage.TabIndex = 2;
+            this.btnLastBillPage.Text = "Last";
+            this.btnLastBillPage.UseVisualStyleBackColor = true;
+            this.btnLastBillPage.Click += new System.EventHandler(this.btnLastBillPage_Click);
+            // 
+            // btnFisrtBillPage
+            // 
+            this.btnFisrtBillPage.Location = new System.Drawing.Point(3, 269);
+            this.btnFisrtBillPage.Name = "btnFisrtBillPage";
+            this.btnFisrtBillPage.Size = new System.Drawing.Size(75, 23);
+            this.btnFisrtBillPage.TabIndex = 1;
+            this.btnFisrtBillPage.Text = "First";
+            this.btnFisrtBillPage.UseVisualStyleBackColor = true;
+            this.btnFisrtBillPage.Click += new System.EventHandler(this.btnFristBillPage_Click);
             // 
             // dtgvBill
             // 
@@ -1036,64 +1121,45 @@
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
-            // btnFisrtBillPage
+            // Report
             // 
-            this.btnFisrtBillPage.Location = new System.Drawing.Point(3, 269);
-            this.btnFisrtBillPage.Name = "btnFisrtBillPage";
-            this.btnFisrtBillPage.Size = new System.Drawing.Size(75, 23);
-            this.btnFisrtBillPage.TabIndex = 1;
-            this.btnFisrtBillPage.Text = "First";
-            this.btnFisrtBillPage.UseVisualStyleBackColor = true;
-            this.btnFisrtBillPage.Click += new System.EventHandler(this.btnFristBillPage_Click);
+            this.Report.Controls.Add(this.reportViewer1);
+            this.Report.Location = new System.Drawing.Point(4, 22);
+            this.Report.Name = "Report";
+            this.Report.Padding = new System.Windows.Forms.Padding(3);
+            this.Report.Size = new System.Drawing.Size(638, 343);
+            this.Report.TabIndex = 5;
+            this.Report.Text = "Report";
+            this.Report.UseVisualStyleBackColor = true;
             // 
-            // btnLastBillPage
+            // reportViewer1
             // 
-            this.btnLastBillPage.Location = new System.Drawing.Point(548, 269);
-            this.btnLastBillPage.Name = "btnLastBillPage";
-            this.btnLastBillPage.Size = new System.Drawing.Size(75, 23);
-            this.btnLastBillPage.TabIndex = 2;
-            this.btnLastBillPage.Text = "Last";
-            this.btnLastBillPage.UseVisualStyleBackColor = true;
-            this.btnLastBillPage.Click += new System.EventHandler(this.btnLastBillPage_Click);
+            reportDataSource1.Name = "Bill";
+            reportDataSource1.Value = this.USP_GetListBillByDateForReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyQuanCafe.Report2.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(6, 29);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(626, 311);
+            this.reportViewer1.TabIndex = 0;
             // 
-            // btnPreviosBillPage
+            // BillTableAdapter
             // 
-            this.btnPreviosBillPage.Location = new System.Drawing.Point(84, 269);
-            this.btnPreviosBillPage.Name = "btnPreviosBillPage";
-            this.btnPreviosBillPage.Size = new System.Drawing.Size(75, 23);
-            this.btnPreviosBillPage.TabIndex = 3;
-            this.btnPreviosBillPage.Text = "Previous";
-            this.btnPreviosBillPage.UseVisualStyleBackColor = true;
-            this.btnPreviosBillPage.Click += new System.EventHandler(this.btnPrevioursBillPage_Click);
+            this.BillTableAdapter.ClearBeforeFill = true;
             // 
-            // btnNextBillPage
+            // QuanLyQuanCafeDataSet1
             // 
-            this.btnNextBillPage.Location = new System.Drawing.Point(467, 269);
-            this.btnNextBillPage.Name = "btnNextBillPage";
-            this.btnNextBillPage.Size = new System.Drawing.Size(75, 23);
-            this.btnNextBillPage.TabIndex = 4;
-            this.btnNextBillPage.Text = "Next";
-            this.btnNextBillPage.UseVisualStyleBackColor = true;
-            this.btnNextBillPage.Click += new System.EventHandler(this.btnNextBillPage_Click);
+            this.QuanLyQuanCafeDataSet1.DataSetName = "QuanLyQuanCafeDataSet1";
+            this.QuanLyQuanCafeDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txbPageBill
+            // USP_GetListBillByDateForReportBindingSource
             // 
-            this.txbPageBill.Location = new System.Drawing.Point(245, 271);
-            this.txbPageBill.Name = "txbPageBill";
-            this.txbPageBill.Size = new System.Drawing.Size(46, 20);
-            this.txbPageBill.TabIndex = 5;
-            this.txbPageBill.Text = "1";
-            this.txbPageBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txbPageBill.TextChanged += new System.EventHandler(this.txbPageBill_TextChanged);
+            this.USP_GetListBillByDateForReportBindingSource.DataMember = "USP_GetListBillByDateForReport";
+            this.USP_GetListBillByDateForReportBindingSource.DataSource = this.QuanLyQuanCafeDataSet1;
             // 
-            // txbLastPage
+            // USP_GetListBillByDateForReportTableAdapter
             // 
-            this.txbLastPage.Location = new System.Drawing.Point(304, 271);
-            this.txbLastPage.Name = "txbLastPage";
-            this.txbLastPage.Size = new System.Drawing.Size(46, 20);
-            this.txbLastPage.TabIndex = 6;
-            this.txbLastPage.Text = "1";
-            this.txbLastPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.USP_GetListBillByDateForReportTableAdapter.ClearBeforeFill = true;
             // 
             // fAdmin
             // 
@@ -1106,6 +1172,9 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Admin";
+            this.Load += new System.EventHandler(this.fAdmin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.BillBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).EndInit();
             this.tcBill.ResumeLayout(false);
             this.tpBill.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1165,6 +1234,9 @@
             this.panel26.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.panel27.ResumeLayout(false);
+            this.Report.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1267,5 +1339,13 @@
         private System.Windows.Forms.Button btnLastBillPage;
         private System.Windows.Forms.Button btnFisrtBillPage;
         private System.Windows.Forms.TextBox txbLastPage;
+        private System.Windows.Forms.TabPage Report;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource BillBindingSource;
+        private QuanLyQuanCafeDataSet QuanLyQuanCafeDataSet;
+        private QuanLyQuanCafeDataSetTableAdapters.BillTableAdapter BillTableAdapter;
+        private System.Windows.Forms.BindingSource USP_GetListBillByDateForReportBindingSource;
+        private QuanLyQuanCafeDataSet1 QuanLyQuanCafeDataSet1;
+        private QuanLyQuanCafeDataSet1TableAdapters.USP_GetListBillByDateForReportTableAdapter USP_GetListBillByDateForReportTableAdapter;
     }
 }

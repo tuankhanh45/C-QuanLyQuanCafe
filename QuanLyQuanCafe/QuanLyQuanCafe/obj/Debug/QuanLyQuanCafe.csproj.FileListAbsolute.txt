@@ -21,3 +21,5 @@ E:\work\C#\C-QuanLyQuanCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCa
 E:\work\C#\C-QuanLyQuanCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fTableManager.resources
 E:\work\C#\C-QuanLyQuanCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.Properties.Resources.resources
 E:\work\C#\C-QuanLyQuanCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csproj.GenerateResource.Cache
+E:\work\C#\C-QuanLyQuanCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\RdlCompile.cache
+E:\work\C#\C-QuanLyQuanCafe\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\RdlCompile.compiled
